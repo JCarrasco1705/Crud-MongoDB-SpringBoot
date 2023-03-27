@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
@@ -16,5 +18,5 @@ public class ResponseUserDto {
     private String nombres;
     private String apellidos;
     private String direccion;
-    private AutoDto autos;
+    private List<AutoDto> autos;
 }

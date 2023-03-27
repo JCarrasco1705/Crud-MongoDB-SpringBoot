@@ -5,6 +5,8 @@ import com.example.crud.mongodb.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -30,4 +32,10 @@ public class UserController {
     public void deleteById(@PathVariable(name = "id") String id){
         service.deleteById(id);
     }
+    @GetMapping("/status")
+    @ResponseStatus(HttpStatus.OK)
+    public Map<String, Object> status() {
+        return Map.of("status", "UP");
+    }
+
 }
